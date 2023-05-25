@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Enjoy the Outdoors</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div>
+        <label class="logo">The Great Outdoors<i class="fa fa-tree"></i></label>
+       
+          <ul>
+            <li><a href='index.html'>Homepage</a></li>
+            <li><a href='parks.html'>Find a Park</a></li>
+            <li><a href='mountains.html'>Mountain Information</a></li>
+          </ul>
+
+        </div>
+      </div>
+      </div>
+    </nav>
+
+<div class="parksSearch">
+  <div class="container">
+    <h1>Find A Park</h1>
+    <div class="col-md-6">
+      <select name="locationSelector" id="locationSelector" class="form-control">
+      <option value="">Select a Location...</option>
+    </select>
+    
+        <select name="parkTypeSelector" id="parkTypeSelector" class="form-control">
+        <option value="choose">Select a Park Type...</option>
+      </select>
+    
+        </div>
+    </div>
+  </div>
+
+  <div class="parkInfo">
+    <div class="row mt-4">
+      <div class="col">
+        <table class="table" id="parksTable">
+          <thead>
+            <tr>
+              <th>Park Name</th>
+              <th>Location</th>
+              <th>Description</th>
+              <th>LocationID</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    
+
+  </div>
+
+    <script src="js/locationData.js" ></script>
+    <script src="js/nationalParkData.js"></script>
+    <script src="js/parkTypeData.js"></script>
+    </body>
+    </html>
