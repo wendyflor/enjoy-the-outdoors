@@ -528,3 +528,60 @@ const mountainsArray = [
         }
     }
 ]
+
+const mountainSelectedEl = document.getElementById('mountainSelector');
+const mtnTableEl = document.getElementById('mtnTable');
+
+mountainsArray.forEach((mtnName) => {
+    const optionEl = new Option(mtnName.name, mtnName.name);
+    mountainSelectedEl.appendChild(optionEl);
+});
+
+
+mountainSelectedEl.addEventListener('change', () => {
+    const tbody = mtnTableEl.querySelector('tbody');
+    tbody.innerHTML = '';
+
+    const selectedMountain = mountainSelectedEl.value;
+
+    const mountainSelected = mountainsArray.filter((mtnName) => mtnName.name === selectedMountain);
+
+    
+
+
+    mountainSelected.forEach((mtnName) => {
+        const row=tbody.insertRow();
+
+        const cellImage = row.insertCell();
+        cellImage.innerHTML = mtnName.img;
+
+        const cellName = row.insertCell();
+        cellName.innerHTML = mtnName.name;
+
+        const cellDescription = row.insertCell();
+        cellDescription.innerHTML = mtnName.desc;
+
+        const cellElevation = row.insertCell();
+        cellElevation.innerHTML = mtnName.elevation;
+    });
+});
+
+
+
+
+const img = document.createElement("img");
+img.src = mtnName.img;
+document.body.appendChild(img);
+
+
+function displayImg() {
+    const mtnImg = mountainsArray.find((mtnName) => mtnName.name === mtnName.img)
+    const img = document.createElement('img')
+    img.src = `./images/.images/${mtnName.img}`;
+    img.alt = 'picture';
+    addImage.appendChild(img);
+}
+
+
+
+

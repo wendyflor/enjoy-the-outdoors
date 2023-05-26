@@ -58,11 +58,15 @@ const locationsArray = [
 
 const locationSelectorEl= document.getElementById('locationSelector');
 const parkTable = document.getElementById('parksTable');
+const parkTypeSelectorEl = document.getElementById('parkTypeSelector');
 
 locationsArray.forEach((location) => {
     const optionEl = new Option(location);
     locationSelectorEl.appendChild(optionEl);
   });
+  
+
+
 
   locationSelectorEl.addEventListener('change', () => {
     const tbody = parkTable.querySelector('tbody');
@@ -70,8 +74,43 @@ locationsArray.forEach((location) => {
 
   const selectedLocation = locationSelectorEl.value;
 
-  const selectedPark = activities.filter(
-    (activity) => activity.category === selectedCategory
+  const locationSelected = nationalParksArray.filter(
+    (location) => location.State === selectedLocation
+  )
+
+  
+
+  locationSelected.forEach((location) => {
+    const row=tbody.insertRow();
+
+    const cellState = row.insertCell();
+    cellState.innerHTML = location.State;
+
+    const cellName = row.insertCell();
+    cellName.innerHTML = location.LocationName;
+
+    
+
+    const cellLocationID = row.insertCell();
+    cellLocationID.innerHTML = location.LocationID;
+
+    const cellAddress = row.insertCell();
+    cellAddress.innerHTML = location.Address;
+
+  });
+  });
+
+
+
+
+
+
+
+//function showTypeOfPark 
+  
+
+
+
 
 
   
