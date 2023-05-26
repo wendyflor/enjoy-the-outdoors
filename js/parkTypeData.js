@@ -14,7 +14,7 @@ const parkTypesArray = [
   "Parkway",
 ];
 
-
+const locationSelectorEl= document.getElementById('locationSelector');
 const parkTypeSelectorEl = document.getElementById('parkTypeSelector');
 const parkTable = document.getElementById('parksTable');
 
@@ -23,16 +23,17 @@ parkTypesArray.forEach((typeOfPark) => {
   parkTypeSelectorEl.appendChild(optionEl);
 });
 
+
 parkTypeSelectorEl.addEventListener('change', () => {
   const tbody = parkTable.querySelector('tbody');
   tbody.innerHTML = '';
 
-  const selectedLocation = locationSelectorEl.value;
+  //const selectedLocation = locationSelectorEl.value;
 
-  const locationSelected = nationalParksArray.filter(
-    (location) => location.State === selectedLocation)
+  //const locationSelected = nationalParksArray.filter(
+    //(location) => location.State === selectedLocation)
 
-    const parkTypeSelected = nationalParksArray.filter((location) => location.LocationName.includes(selectedType));
+   const parkTypeSelected = nationalParksArray.filter((location) => location.LocationName.includes(selectedType));
 
     parkTypeSelected.forEach((location) => {
       const row=tbody.insertRow();

@@ -106,7 +106,8 @@ locationsArray.forEach((location) => {
 
 
 
-//function showTypeOfPark 
+
+
   
 
 
